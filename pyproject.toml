@@ -24,6 +24,8 @@ train = [
     "datasets>=3.0",
     "peft>=0.13",
     "bitsandbytes>=0.44",   # QLoRA(4비트) 학습용
+    "qwen-vl-utils>=0.0.8", # Qwen2.5-VL 이미지 입력 전처리
+    "tqdm>=4.66",
 ]
 
 [[tool.uv.index]]
