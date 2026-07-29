@@ -22,9 +22,25 @@ import os
 
 import cv2
 import numpy as np
+import requests
 from remotezip import RemoteZip
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def _auth_session():
+    """HF 토큰(hf auth login으로 저장된 값)을 실은 requests 세션.
+    remotezip은 날것의 HTTP 요청이라, 이 세션으로 Authorization 헤더를 붙여야
+    로그인된 요청이 되어 다운로드 속도 제한이 풀린다."""
+    s = requests.Session()
+    try:
+        from huggingface_hub import get_token
+        tok = get_token()
+        if tok:
+            s.headers.update({"Authorization": f"Bearer {tok}"})
+    except Exception:
+        pass
+    return s
 FRAMES_ROOT = os.path.join(HERE, "data", "frames")
 VIDEO_TMP = os.path.join(HERE, "data", "videos", "_tmp")
 INDEX_PATH = os.path.join(HERE, "data", "videos", "video_index.json")
@@ -44,7 +60,7 @@ def build_index() -> dict:
     index = {}
     for url in BATCH_URLS:
         print(f"목차 읽는 중: {url.split('/')[-1]}")
-        with RemoteZip(url) as z:
+        with RemoteZip(url, session=_auth_session()) as z:
             for name in z.namelist():
                 if not name.endswith("_hololens.mp4"):
                     continue
@@ -153,7 +169,7 @@ def main():
         local_mp4 = os.path.join(VIDEO_TMP, os.path.basename(member))
         if not os.path.exists(local_mp4):
             print(f"[{ci}/{len(clips)}] {clip}: 영상 range 다운로드 중...")
-            with RemoteZip(entry["batch_url"]) as z:
+            with RemoteZip(entry["batch_url"], session=_auth_session()) as z:
                 z.extract(member, VIDEO_TMP)
                 # zip 내부 경로가 하위폴더면 평탄화
                 extracted = os.path.join(VIDEO_TMP, member)
