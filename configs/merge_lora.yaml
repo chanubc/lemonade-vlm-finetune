@@ -1,0 +1,13 @@
+# 학습된 LoRA 어댑터를 기본 모델에 합쳐 하나의 모델로 내보낸다.
+# (평가는 evaluate.py --adapter 로 어댑터만 붙여도 되지만,
+#  vLLM 서빙이나 open-webui 데모용으로는 합친 모델이 편하다.)
+# 실행: uv run llamafactory-cli export configs/merge_lora.yaml
+
+model_name_or_path: Qwen/Qwen2.5-VL-3B-Instruct
+adapter_name_or_path: out/qwen2p5vl-3b-lemonade-qlora
+template: qwen2_vl
+trust_remote_code: true
+
+export_dir: out/qwen2p5vl-3b-lemonade-merged
+export_size: 4
+export_legacy_format: false

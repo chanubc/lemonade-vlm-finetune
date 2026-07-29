@@ -1,0 +1,68 @@
+# LLaMA-Factory 학습 config: Qwen2.5-VL-3B + QLoRA, LEMONADE(Perception/Reasoning)
+# 실행(프로젝트 루트에서):
+#   uv run llamafactory-cli train configs/qwen2_5vl_lemonade_qlora.yaml
+#
+# 12GB VRAM(RTX 5070) 기준 보수적 설정. OOM이 나면 아래 "VRAM 줄이는 순서" 참고.
+
+### 모델
+model_name_or_path: Qwen/Qwen2.5-VL-3B-Instruct
+trust_remote_code: true
+image_max_pixels: 200704      # 448*448. 이미지 토큰 수(=VRAM)를 제한. 줄이면 더 절약
+video_max_pixels: 65536
+
+### 방법: QLoRA (4비트로 압축한 채 LoRA만 학습)
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target: all              # 언어부분 선형층 전부에 LoRA
+quantization_bit: 4           # ← QLoRA. 12GB에 3B를 올리는 핵심
+quantization_method: bnb      # bitsandbytes
+freeze_vision_tower: true         # 비전 인코더는 학습 안 함(안정적·VRAM 절약)
+freeze_multi_modal_projector: true
+
+### 데이터
+dataset: lemonade_train
+eval_dataset: lemonade_val
+dataset_dir: data/converted   # 여기의 dataset_info.json을 읽음
+template: qwen2_vl            # Qwen2/2.5-VL 공용 템플릿
+cutoff_len: 4096             # 이미지 토큰+텍스트 최대 길이(넘으면 잘림)
+overwrite_cache: true
+preprocessing_num_workers: 4
+# 이미지 경로는 프로젝트 루트 기준 상대경로(data/frames/...)이므로 루트에서 실행할 것.
+# 만약 LLaMA-Factory가 경로를 못 찾으면 media_dir 를 프로젝트 루트로 지정:
+# media_dir: .
+
+### 출력
+output_dir: out/qwen2p5vl-3b-lemonade-qlora
+logging_steps: 10
+save_steps: 500
+save_total_limit: 2
+plot_loss: true
+overwrite_output_dir: true
+report_to: none              # wandb 쓰려면 "wandb"로
+
+### 학습 하이퍼파라미터
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16   # 유효 배치 = 1*16 = 16
+learning_rate: 1.0e-4
+num_train_epochs: 2.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+bf16: true
+gradient_checkpointing: true      # 메모리↓ 속도↓ (12GB엔 필수급)
+
+### 검증
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 500
+
+# ── VRAM 줄이는 순서 (OOM 뜨면 위에서부터) ──────────────────
+# 1) image_max_pixels: 200704 → 100352(≈336²) → 50176(≈224²)
+# 2) 학습 데이터 프레임 수를 8 → 4로 줄여 재생성:
+#      uv run python scripts/convert_to_vqa.py --frames 4
+#      uv run python scripts/extract_frames.py --splits train val --max-side 448
+# 3) cutoff_len: 4096 → 2048
+# 4) lora_rank: 16 → 8
