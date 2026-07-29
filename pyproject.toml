@@ -26,6 +26,7 @@ train = [
     "bitsandbytes>=0.44",   # QLoRA(4비트) 학습용
     "qwen-vl-utils>=0.0.8", # Qwen2.5-VL 이미지 입력 전처리
     "tqdm>=4.66",
+    "llamafactory[metrics]>=0.9.5",
 ]
 
 [[tool.uv.index]]
@@ -36,6 +37,7 @@ explicit = true
 [tool.uv.sources]
 torch = { index = "pytorch-cu128" }
 torchvision = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
 
 [tool.setuptools]
 py-modules = []
