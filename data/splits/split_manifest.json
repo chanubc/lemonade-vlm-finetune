@@ -1,0 +1,43 @@
+{
+  "ratios_target": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "splits": {
+    "train": {
+      "n_qa": 25763,
+      "ratio": 0.7054,
+      "participants": [
+        "YH2007",
+        "YH2011",
+        "YH2018",
+        "YH2021",
+        "YH2025",
+        "YH2036",
+        "YH2037",
+        "YH2040",
+        "YH2042",
+        "YH2043"
+      ]
+    },
+    "val": {
+      "n_qa": 5400,
+      "ratio": 0.1479,
+      "participants": [
+        "YH2002",
+        "YH2004",
+        "YH2014"
+      ]
+    },
+    "test": {
+      "n_qa": 5358,
+      "ratio": 0.1467,
+      "participants": [
+        "YH2003",
+        "YH2029",
+        "YH2030"
+      ]
+    }
+  }
+}

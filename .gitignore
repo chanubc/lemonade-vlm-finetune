@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 대용량 논문 PDF (외부에서 다시 받을 수 있음)
+papers/*.pdf
+
+# 데이터: 원본 표와 split은 스크립트로 재생성 가능
+data/raw/
+data/splits/*.parquet
+data/converted/*.json
+
+# 비디오(약 61GB)와 추출 프레임
+data/videos/
+data/frames/
+
+# 학습 산출물
+out/
+outputs/
+*.ckpt
+*.safetensors
+
+# OS
+.DS_Store
+Thumbs.db
