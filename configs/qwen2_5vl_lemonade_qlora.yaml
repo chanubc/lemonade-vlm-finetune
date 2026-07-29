@@ -25,7 +25,6 @@ freeze_multi_modal_projector: true
 
 ### 데이터
 dataset: lemonade_train
-eval_dataset: lemonade_val
 dataset_dir: data/converted   # 여기의 dataset_info.json을 읽음
 template: qwen2_vl            # Qwen2/2.5-VL 공용 템플릿
 cutoff_len: 4096             # 이미지 토큰+텍스트 최대 길이(넘으면 잘림)
@@ -48,16 +47,15 @@ report_to: none              # wandb 쓰려면 "wandb"로
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 16   # 유효 배치 = 1*16 = 16
 learning_rate: 1.0e-4
-num_train_epochs: 2.0
+num_train_epochs: 1.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.03
 bf16: true
 gradient_checkpointing: true      # 메모리↓ 속도↓ (12GB엔 필수급)
 
-### 검증
-per_device_eval_batch_size: 1
-eval_strategy: steps
-eval_steps: 500
+### 검증: 학습 중 평가는 끔(val 2,775개 평가가 시간을 크게 잡아먹음).
+### before/after 비교는 학습 후 evaluate.py로 test에서 수행.
+eval_strategy: "no"
 
 # ── VRAM 줄이는 순서 (OOM 뜨면 위에서부터) ──────────────────
 # 1) image_max_pixels: 200704 → 100352(≈336²) → 50176(≈224²)
