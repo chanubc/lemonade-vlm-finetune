@@ -9,8 +9,20 @@ EPFL-Smart-Kitchen-30 논문([arXiv 2506.01608](https://arxiv.org/abs/2506.01608
 **위 화면이 이 프로젝트가 하는 일입니다** — 파인튜닝한 모델(`lemonade-qwen2.5-vl-3b`)을
 open-webui에 붙여, 요리 영상 프레임을 보고 행동을 맞히게 한 데모.
 
-- **입력(input)**: 한 영상 구간에서 균등 추출한 **프레임 8장**
-  (`samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/` 의 `frame_00~07.jpg`)
+- **입력(input)**: 한 영상 구간에서 균등 추출한 **프레임 8장** (시간 순서, 왼쪽→오른쪽)
+  (`samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/`)
+
+<p align="left">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_00.jpg" width="92">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_01.jpg" width="92">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_02.jpg" width="92">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_03.jpg" width="92">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_04.jpg" width="92">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_05.jpg" width="92">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_06.jpg" width="92">
+  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_07.jpg" width="92">
+</p>
+
 - **질문(prompt)**:
   > Answer the following multiple-choice question using the given images.
   > Question: What action am I doing?
