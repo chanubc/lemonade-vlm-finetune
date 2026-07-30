@@ -5,7 +5,6 @@ EPFL-Smart-Kitchen-30 논문([arXiv 2506.01608](https://arxiv.org/abs/2506.01608
 1인칭 요리 영상에 대한 4지선다 질의응답(Perception/Reasoning)을 학습한다.
 
 > 처음 오셨다면 → **[ONBOARDING.md](ONBOARDING.md)** (처음부터 끝까지 따라 하기)
-> 폴더명 `kaist`는 세션 제약으로 남아있음. 적합한 이름은 `lemonade-vlm-finetune`.
 
 ## 결과 (한눈에)
 test 2,852문제, 학습에 없던 참가자 기준(누수 없음). 찍기 = 25%.
