@@ -44,10 +44,16 @@ uv run python scripts/compare_results.py
 전체 설명은 [ONBOARDING.md](ONBOARDING.md), 학습 상세는 [configs/TRAINING.md](configs/TRAINING.md),
 데모는 [docs/DEMO.md](docs/DEMO.md).
 
+## 바로 테스트 (clone 후)
+전체 데이터(수 GB)는 .gitignore이지만, **데모용 샘플은 git에 포함**돼 있다.
+clone 직후 `samples/` 의 이미지 8장 + 질문으로 open-webui에서 바로 테스트 가능.
+→ [samples/README.md](samples/README.md) (정답 포함 예제 6개), 실행법은 [docs/DEMO.md](docs/DEMO.md)
+
 ## 폴더 구조
 ```
-scripts/   재현 스크립트 (다운로드·분할·변환·프레임추출·평가·비교·서빙)
+scripts/   재현 스크립트 (다운로드·분할·변환·프레임추출·평가·비교·서빙·샘플생성)
 configs/   학습 config(QLoRA) + 병합 + TRAINING.md
+samples/   데모용 소량 샘플 (git 포함): frames + 질문·정답
 data/      raw / splits / converted / frames  (대용량 .gitignore)
 results/   before/after 결과 문서
 docs/      DEMO.md (open-webui 데모)
