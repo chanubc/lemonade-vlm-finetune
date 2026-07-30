@@ -23,15 +23,18 @@ open-webui에 붙여, 요리 영상 프레임을 보고 행동을 맞히게 한 
   <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_07.jpg" width="92">
 </p>
 
-- **질문(prompt)**:
-  > Answer the following multiple-choice question using the given images.
-  > Question: What action am I doing?
-  > Choices:
-  > A. grabbing the green salad
-  > B. shaking the carrots
-  > C. holding the radish
-  > **D. closing the bottle**
-  > Respond only with the letter of the correct answer.
+- **질문(prompt)** — 모델에 넣는 실제 텍스트:
+
+```text
+Answer the following multiple-choice question using the given images.
+Question: What action am I doing?
+Choices:
+A. grabbing the green salad
+B. shaking the carrots
+C. holding the radish
+D. closing the bottle          <- 정답
+Respond only with the letter of the correct answer.
+```
 - **정답**: **D** (병뚜껑을 닫는 장면) → 모델이 **D로 정답**. 기본 Qwen2.5-VL은 이런 문제를 자주 틀린다(41% → 71.5%).
 
 > 처음 오셨다면 → **[ONBOARDING.md](ONBOARDING.md)** (처음부터 끝까지 따라 하기)
