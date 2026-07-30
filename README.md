@@ -4,6 +4,20 @@ EPFL-Smart-Kitchen-30 논문([arXiv 2506.01608](https://arxiv.org/abs/2506.01608
 **LEMONADE** VQA 벤치마크로 **Qwen2.5-VL-3B** 를 파인튜닝한 프로젝트.
 1인칭 요리 영상에 대한 4지선다 질의응답(Perception/Reasoning)을 학습한다.
 
+![open-webui 데모: 파인튜닝 모델이 부엌 행동 질문에 정답(D)](docs/assets/demo-openwebui.png)
+
+**위 화면이 이 프로젝트가 하는 일입니다** — 파인튜닝한 모델(`lemonade-qwen2.5-vl-3b`)을
+open-webui에 붙여, 요리 영상 프레임을 보고 행동을 맞히게 한 데모.
+
+- **입력(input)**: 한 영상 구간에서 균등 추출한 **프레임 8장**
+  (`samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/` 의 `frame_00~07.jpg`)
+- **질문(prompt)**:
+  > Answer the following multiple-choice question using the given images.
+  > Question: What action am I doing?
+  > Choices: A. grabbing the green salad / B. shaking the carrots / C. holding the radish / **D. closing the bottle**
+  > Respond only with the letter of the correct answer.
+- **정답**: **D** (병뚜껑을 닫는 장면) → 모델이 **D로 정답**. 기본 Qwen2.5-VL은 이런 문제를 자주 틀린다(41% → 71.5%).
+
 > 처음 오셨다면 → **[ONBOARDING.md](ONBOARDING.md)** (처음부터 끝까지 따라 하기)
 
 ## 결과 (한눈에)
