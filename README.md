@@ -80,6 +80,7 @@ uv run python scripts/compare_results.py
 전체 데이터(수 GB)는 .gitignore이지만, **데모용 샘플은 git에 포함**돼 있다.
 clone 직후 `samples/` 의 이미지 8장 + 질문으로 open-webui에서 바로 테스트 가능.
 → [samples/README.md](samples/README.md) (정답 포함 예제 6개), 실행법은 [docs/DEMO.md](docs/DEMO.md)
+가장 인상적인 건 [samples/SHOWCASE.md](samples/SHOWCASE.md) — **기본 모델은 틀리고 파인튜닝 모델은 맞히는 hard 예제**(영어·한국어 프롬프트).
 
 ## 폴더 구조
 ```
