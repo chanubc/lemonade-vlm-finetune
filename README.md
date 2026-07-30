@@ -1,53 +1,66 @@
 # LEMONADE VLM Finetune
 
-EPFL-Smart-Kitchen-30 논문(arXiv 2506.01608)의 **LEMONADE** VQA 벤치마크로
-**Qwen2.5-VL-3B**를 파인튜닝하기 위한 작업 저장소.
+EPFL-Smart-Kitchen-30 논문([arXiv 2506.01608](https://arxiv.org/abs/2506.01608))의
+**LEMONADE** VQA 벤치마크로 **Qwen2.5-VL-3B** 를 파인튜닝한 프로젝트.
+1인칭 요리 영상에 대한 4지선다 질의응답(Perception/Reasoning)을 학습한다.
 
-> 폴더명은 현재 `kaist`이지만 프로젝트 성격상 `lemonade-vlm-finetune`이 적합.
-> (세션 종료 후 이름 변경 방법은 아래 참고)
+> 처음 오셨다면 → **[ONBOARDING.md](ONBOARDING.md)** (처음부터 끝까지 따라 하기)
+> 폴더명 `kaist`는 세션 제약으로 남아있음. 적합한 이름은 `lemonade-vlm-finetune`.
+
+## 결과 (한눈에)
+test 2,852문제, 학습에 없던 참가자 기준(누수 없음). 찍기 = 25%.
+
+| | before(기본) | **after(파인튜닝)** | Δ |
+|---|---|---|---|
+| **전체** | 41.0% | **71.5%** | **+30.4** |
+| Perception | 40.7% | 67.2% | +26.5 |
+| Reasoning | 41.4% | 76.0% | +34.6 |
+| easy/medium/hard | 46/41/34% | 76/73/64% | +30/+32/+30 |
+
+QLoRA(4비트), 1 epoch, RTX 5070(12GB)에서 ~9시간. 상세: [results/after_comparison.md](results/after_comparison.md)
+공개 어댑터: https://huggingface.co/chanubc/Qwen2.5-VL-3B-LEMONADE-LoRA
 
 ## 진행 상황
-- [x] 논문 저장 (`papers/`)
-- [x] QA 표 다운로드 (비디오 제외, `scripts/download_qa.py`)
-- [x] 참가자 단위 train/val/test 분할 (`scripts/make_splits.py`)
-- [x] Perception/Reasoning 학습 포맷 변환 (`scripts/convert_to_vqa.py`)
-- [ ] 비디오 다운로드 + 프레임 추출
-- [ ] Qwen2.5-VL-3B 파인튜닝 (LLaMA-Factory)
-- [ ] lmms-eval 평가
+- [x] 논문 저장 / QA 표 다운로드 / 참가자 단위 분할 / 학습 포맷 변환
+- [x] 영상 프레임 추출 (필요한 것만 스트리밍)
+- [x] before 기준선 측정 (41.0%, 비전 기여 +12.9%p)
+- [x] QLoRA 파인튜닝 (LLaMA-Factory)
+- [x] after 평가 및 비교 (71.5%)
+- [x] 어댑터 HuggingFace 공개 + open-webui 데모
+
+## 빠른 재현
+```bash
+uv sync && uv sync --group train
+uv run hf auth login
+uv run python scripts/download_qa.py
+uv run python scripts/make_splits.py
+uv run python scripts/convert_to_vqa.py
+uv run python scripts/extract_frames.py --splits train val test
+uv run python scripts/convert_to_vqa.py --require-frames
+uv run llamafactory-cli train configs/qwen2_5vl_lemonade_qlora.yaml
+uv run python scripts/evaluate.py --split test --adapter out/qwen2p5vl-3b-lemonade-qlora --out out/eval_after.json
+uv run python scripts/compare_results.py
+```
+전체 설명은 [ONBOARDING.md](ONBOARDING.md), 학습 상세는 [configs/TRAINING.md](configs/TRAINING.md),
+데모는 [docs/DEMO.md](docs/DEMO.md).
 
 ## 폴더 구조
 ```
-scripts/          재현용 스크립트 (git에 포함)
-  download_qa.py     QA 표(parquet)만 다운로드
-  make_splits.py     참가자 단위 분할
-  convert_to_vqa.py  Qwen2.5-VL 학습 JSON 변환
-data/             데이터 (대용량은 .gitignore)
-  raw/               lemonade_qa.parquet (36,521 QA)
-  splits/            train/val/test.parquet + split_manifest.json
-  converted/         train/val/test.json (학습 포맷) + dataset_info.json
-  videos/  frames/   (아직 없음) 비디오·추출 프레임
-papers/           논문 PDF (.gitignore)
+scripts/   재현 스크립트 (다운로드·분할·변환·프레임추출·평가·비교·서빙)
+configs/   학습 config(QLoRA) + 병합 + TRAINING.md
+data/      raw / splits / converted / frames  (대용량 .gitignore)
+results/   before/after 결과 문서
+docs/      DEMO.md (open-webui 데모)
+papers/, out/   논문 PDF·학습 산출물 (.gitignore)
 ```
 
-## 재현 방법
-```bash
-python scripts/download_qa.py                 # 1. QA 표 다운로드
-python scripts/make_splits.py                 # 2. 참가자 단위 분할
-python scripts/convert_to_vqa.py --frames 8   # 3. Perception/Reasoning 변환
-# (12GB VRAM이면 --frames 4 권장)
-```
+## 데이터 규모 (Perception + Reasoning)
+| split | QA(프레임 확보 후) | 참가자 |
+|---|---|---|
+| train | 12,858 | 10명 |
+| val | 2,775 | 3명 |
+| test | 2,852 | 3명 |
 
-## 데이터 규모 (Perception + Reasoning, 변환 결과)
-| split | QA 수 |
-|---|---|
-| train | 13,230 |
-| val | 2,775 |
-| test | 2,852 |
-| 합계 | 18,857 |
-
-## 폴더명 변경 (세션 종료 후)
-현재 세션이 이 폴더를 사용 중이라 실행 중에는 변경 불가.
-Claude Code를 종료한 뒤 PowerShell에서:
-```powershell
-Rename-Item C:\Users\chanwoo\workspace\kaist C:\Users\chanwoo\workspace\lemonade-vlm-finetune
-```
+## 원칙
+- 파이썬 패키지는 **uv로 전부 관리** (`uv add`/`uv run`/`uv sync`).
+- 데이터 분할은 **참가자 단위**(데이터 누수 방지).

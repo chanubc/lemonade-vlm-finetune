@@ -27,6 +27,9 @@ train = [
     "qwen-vl-utils>=0.0.8", # Qwen2.5-VL 이미지 입력 전처리
     "tqdm>=4.66",
     "llamafactory[metrics]>=0.9.5",
+    "fastapi>=0.115",       # 데모 서버(scripts/serve_openai.py)
+    "uvicorn>=0.30",
+    "pillow>=10",
 ]
 
 [[tool.uv.index]]
