@@ -26,7 +26,11 @@ open-webui에 붙여, 요리 영상 프레임을 보고 행동을 맞히게 한 
 - **질문(prompt)**:
   > Answer the following multiple-choice question using the given images.
   > Question: What action am I doing?
-  > Choices: A. grabbing the green salad / B. shaking the carrots / C. holding the radish / **D. closing the bottle**
+  > Choices:
+  > A. grabbing the green salad
+  > B. shaking the carrots
+  > C. holding the radish
+  > **D. closing the bottle**
   > Respond only with the letter of the correct answer.
 - **정답**: **D** (병뚜껑을 닫는 장면) → 모델이 **D로 정답**. 기본 Qwen2.5-VL은 이런 문제를 자주 틀린다(41% → 71.5%).
 
