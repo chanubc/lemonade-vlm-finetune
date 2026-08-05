@@ -1,0 +1,31 @@
+{
+ "tag": "finetuned",
+ "everyday(일상,핵심)": {
+  "fp": 2,
+  "n": 120,
+  "rate": 0.017
+ },
+ "everyday(LEMONADE)": {
+  "fp": 0,
+  "n": 65,
+  "rate": 0.0
+ },
+ "borderline(발화직전)": {
+  "fp": 20,
+  "n": 41,
+  "rate": 0.488
+ },
+ "labrig(랩,비대표)": {
+  "fp": 6,
+  "n": 18,
+  "rate": 0.333
+ },
+ "fire_recall": {
+  "hit": 66,
+  "n": 71
+ },
+ "smoke_recall": {
+  "hit": 4,
+  "n": 7
+ }
+}

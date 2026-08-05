@@ -218,11 +218,11 @@
     "id": "tn_2reC5ZIRedo",
     "url": "https://www.youtube.com/watch?v=2reC5ZIRedo",
     "kind": "ytdlp",
-    "split": "train",
+    "split": "holdout",
     "force_label": "normal",
     "label_hint": "정상 조리(계란 프라이)",
     "license": "조리영상 - 연구 학습용",
-    "note": "실 스토브 정상 대량수집.",
+    "note": "홀드아웃 전용: 일상 스토브 정상(배포 지표용).",
     "enabled": true
   },
   {
@@ -262,11 +262,11 @@
     "id": "tn_d9AD_J9LRQI",
     "url": "https://www.youtube.com/watch?v=d9AD-J9LRQI",
     "kind": "ytdlp",
-    "split": "train",
+    "split": "holdout",
     "force_label": "normal",
     "label_hint": "정상 조리(중식 웍 조리)",
     "license": "조리영상 - 연구 학습용",
-    "note": "실 스토브 정상 대량수집.",
+    "note": "홀드아웃 전용: 일상 스토브 정상(배포 지표용).",
     "enabled": true
   },
   {
@@ -317,11 +317,11 @@
     "id": "tn_nmAa1suJ5OY",
     "url": "https://www.youtube.com/watch?v=nmAa1suJ5OY",
     "kind": "ytdlp",
-    "split": "train",
+    "split": "holdout",
     "force_label": "normal",
     "label_hint": "정상 조리(버거 스토브)",
     "license": "조리영상 - 연구 학습용",
-    "note": "실 스토브 정상 대량수집.",
+    "note": "홀드아웃 전용: 일상 스토브 정상(배포 지표용).",
     "enabled": true
   },
   {

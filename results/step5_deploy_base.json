@@ -1,0 +1,31 @@
+{
+ "tag": "base",
+ "everyday(일상,핵심)": {
+  "fp": 10,
+  "n": 120,
+  "rate": 0.083
+ },
+ "everyday(LEMONADE)": {
+  "fp": 1,
+  "n": 65,
+  "rate": 0.015
+ },
+ "borderline(발화직전)": {
+  "fp": 34,
+  "n": 41,
+  "rate": 0.829
+ },
+ "labrig(랩,비대표)": {
+  "fp": 11,
+  "n": 18,
+  "rate": 0.611
+ },
+ "fire_recall": {
+  "hit": 71,
+  "n": 71
+ },
+ "smoke_recall": {
+  "hit": 7,
+  "n": 7
+ }
+}
