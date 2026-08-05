@@ -1,0 +1,52 @@
+# LLaMA-Factory 학습 config: Qwen2.5-VL-3B + QLoRA, 조리 안전 3분류(normal/smoke/fire)
+# 실행: uv run llamafactory-cli train configs/qwen2_5vl_cooking_qlora.yaml
+# 데이터: STEP 2 합성 360장(이미지 1장/샘플). 평가는 실 홀드아웃(holdout_v0)으로 별도.
+
+### 모델
+model_name_or_path: Qwen/Qwen2.5-VL-3B-Instruct
+trust_remote_code: true
+image_max_pixels: 200704      # 448*448. 이미지 1장이라 VRAM 여유 있음
+video_max_pixels: 65536
+
+### 방법: QLoRA
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target: all
+quantization_bit: 4
+quantization_method: bnb
+freeze_vision_tower: true
+freeze_multi_modal_projector: true
+
+### 데이터
+dataset: cooking_synth_train
+dataset_dir: data/synth_vqa
+template: qwen2_vl
+cutoff_len: 2048
+overwrite_cache: true
+preprocessing_num_workers: 4
+media_dir: .                  # 이미지 경로가 프로젝트 루트 기준(data/synth/...)
+
+### 출력
+output_dir: out/qwen2p5vl-3b-cooking-qlora
+logging_steps: 5
+save_steps: 100
+save_total_limit: 1
+plot_loss: true
+overwrite_output_dir: true
+report_to: none
+
+### 하이퍼파라미터 (작은 데이터셋 → 3 epoch)
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8    # 유효 배치 = 16
+learning_rate: 1.0e-4
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+bf16: true
+gradient_checkpointing: true
+
+eval_strategy: "no"

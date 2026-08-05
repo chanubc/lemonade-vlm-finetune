@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nist_fcd_kitchen_room_fire",
+    "url": "https://nist-el-nfrlhrr.s3.amazonaws.com/HRR/ASSET_FILES/CFS_Phase2/video/1531847148.mp4",
+    "kind": "direct",
+    "split": "holdout",
+    "label_hint": "progression: normal -> smoke -> fire -> flashover",
+    "license": "US government (NIST NFRL Fire Calorimetry Database) - public domain",
+    "note": "가구 갖춘 주방, 방치된 조리유 팬 자연발화 후 플래시오버. 조리 도메인 위험 실물.",
+    "enabled": true
+  },
+  {
+    "id": "nist_cornoil_alumipan",
+    "url": "https://nist-el-nfrlhrr.s3.amazonaws.com/HRR/ASSET_FILES/Corn%20Oil/video/1574199884.mp4",
+    "kind": "direct",
+    "split": "holdout",
+    "label_hint": "corn oil pan on cooktop -> smoke -> ignition",
+    "license": "US government (NIST NFRL FCD) - public domain",
+    "note": "옥수수유 50g, 알루미늄 팬. 조리유 팬 화재 실물.",
+    "enabled": true
+  },
+  {
+    "id": "nist_cornoil_calphalon",
+    "url": "https://nist-el-nfrlhrr.s3.amazonaws.com/HRR/ASSET_FILES/Corn%20Oil/video/1574198232.mp4",
+    "kind": "direct",
+    "split": "holdout",
+    "label_hint": "corn oil pan on cooktop -> smoke -> ignition",
+    "license": "US government (NIST NFRL FCD) - public domain",
+    "note": "옥수수유 50g, Calphalon 팬. 조리유 팬 화재 실물.",
+    "enabled": true
+  },
+  {
+    "id": "nist_stovetop_massloss13",
+    "url": "https://nist-el-nfrlhrr.s3.amazonaws.com/HRR/ASSET_FILES/Hamins%20Kitchen/video/1508954077.mp4",
+    "kind": "direct",
+    "split": "holdout",
+    "label_hint": "stovetop cooking oil pan fire test",
+    "license": "US government (NIST NFRL FCD) - public domain",
+    "note": "Hamins Kitchen 스토브탑 시험 13.",
+    "enabled": true
+  },
+  {
+    "id": "nist_stovetop_massloss14c",
+    "url": "https://nist-el-nfrlhrr.s3.amazonaws.com/HRR/ASSET_FILES/Hamins%20Kitchen/video/1508958465.mp4",
+    "kind": "direct",
+    "split": "holdout",
+    "label_hint": "stovetop cooking oil pan fire test",
+    "license": "US government (NIST NFRL FCD) - public domain",
+    "note": "Hamins Kitchen 스토브탑 시험 14c.",
+    "enabled": true
+  },
+  {
+    "id": "nist_360_kitchen_fire",
+    "url": "https://www.nist.gov/video/360deg-video-kitchen-fire",
+    "kind": "ytdlp",
+    "split": "holdout",
+    "label_hint": "danger (360 equirectangular, 왜곡 있음 - 보조용)",
+    "license": "US government (NIST) - public domain",
+    "note": "360도 영상이라 기하 왜곡. 우선순위 낮음. 필요시 enabled true.",
+    "enabled": false
+  },
+  {
+    "id": "worthing_chip_pan_demo",
+    "url": "https://www.youtube.com/watch?v=KTrth1ywHM4",
+    "kind": "ytdlp",
+    "split": "holdout",
+    "label_hint": "normal -> water-into-oil -> flare-up",
+    "license": "소방서 공익 공개영상 - 연구/평가 내부용만, 재배포 금지",
+    "note": "Worthing Fire Station chip pan 실연. 전이 시점 라벨에 좋음.",
+    "enabled": false
+  },
+  {
+    "id": "northants_chip_pan_guidance",
+    "url": "https://www.youtube.com/watch?v=KO2HTtn6CvY",
+    "kind": "ytdlp",
+    "split": "holdout",
+    "label_hint": "normal -> flare-up",
+    "license": "소방서 공익 공개영상 - 연구/평가 내부용만, 재배포 금지",
+    "note": "Northamptonshire Fire chip pan 실연 + 안내.",
+    "enabled": false
+  },
+  {
+    "id": "grease_fire_demo",
+    "url": "https://www.youtube.com/watch?v=-dnLGP-xnRo",
+    "kind": "ytdlp",
+    "split": "train",
+    "label_hint": "fire",
+    "license": "출처 확인 후 사용 - 내부용",
+    "note": "grease fire 실연. split=train 예시(홀드아웃과 겹치지 않게 영상 단위 분리).",
+    "enabled": false
+  }
+]

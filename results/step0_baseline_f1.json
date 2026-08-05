@@ -1,0 +1,1221 @@
+{
+ "summary": {
+  "model": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "n": 200,
+  "positive_class": "fire",
+  "accuracy": 0.785,
+  "precision": 0.708,
+  "recall": 0.97,
+  "f1": 0.8186,
+  "confusion": {
+   "tp": 97,
+   "fp": 40,
+   "fn": 3,
+   "tn": 60
+  },
+  "unparsed": 0,
+  "prompt": "Does this image show a fire? Answer only 'fire' or 'normal'."
+ },
+ "results": [
+  {
+   "path": "data/dfire_step0/fire/AoF07935.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07816.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07913.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07946.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07825.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07728.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07784.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07849.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07843.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07821.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07954.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07919.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07931.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07795.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07841.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07809.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07868.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07947.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07773.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07848.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07753.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07790.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07950.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07912.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07742.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07877.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07923.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07782.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07855.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07899.jpg",
+   "gold": "fire",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07926.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07873.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07755.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07797.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07743.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07905.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07736.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07894.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07802.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07839.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07862.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07933.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07808.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07829.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07798.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07875.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07882.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07770.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07860.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07953.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07832.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07852.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07961.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07733.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07859.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07721.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07741.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07903.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07820.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07900.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07890.jpg",
+   "gold": "fire",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07879.jpg",
+   "gold": "fire",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07718.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07922.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07845.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07803.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07780.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07801.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07938.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07734.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07766.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07864.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07774.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07779.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07754.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07858.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07833.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07911.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07738.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07799.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07960.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07844.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07745.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07957.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07956.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07792.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07749.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07968.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07902.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07857.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07920.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07936.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07880.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07869.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07791.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07917.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07907.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF08067.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07888.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/fire/AoF07866.jpg",
+   "gold": "fire",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06970.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07021.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06911.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06916.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07565.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06914.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06756.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07351.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07396.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06990.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07211.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06793.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06814.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07419.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07499.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06856.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07622.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06876.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07670.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06762.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07586.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06805.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07644.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07440.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07699.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07573.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07277.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07423.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07124.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07581.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07446.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07261.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07006.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07258.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07555.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "Normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06964.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07593.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06943.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07641.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07704.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07327.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07569.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07153.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07317.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07005.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07185.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07228.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07400.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07380.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07441.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07663.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07536.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07089.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06807.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07056.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07710.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06841.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "Normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07222.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07325.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07369.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07067.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07589.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06917.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06971.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06739.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07473.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07001.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "Normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06842.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07687.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06948.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07104.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07537.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06897.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07064.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07160.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07559.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06786.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06826.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07525.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06872.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07599.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07438.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "Normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06947.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06769.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07560.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07311.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07373.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07271.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07340.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07420.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06798.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06750.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06850.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07374.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07714.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07344.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07574.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07313.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "Normal"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF06845.jpg",
+   "gold": "normal",
+   "pred": "fire",
+   "raw": "fire"
+  },
+  {
+   "path": "data/dfire_step0/normal/AoF07689.jpg",
+   "gold": "normal",
+   "pred": "normal",
+   "raw": "normal"
+  }
+ ]
+}

@@ -16,6 +16,10 @@ dependencies = [
 # 학습에 필요한 무거운 패키지(torch 등)는 별도 그룹.
 # RTX 5070(Blackwell)은 CUDA 12.8 빌드가 필요하므로 cu128 인덱스에서 받는다.
 [dependency-groups]
+collect = [
+    "imageio-ffmpeg>=0.6.0",
+    "yt-dlp>=2026.7.4",
+]
 train = [
     "torch>=2.7",
     "torchvision>=0.22",

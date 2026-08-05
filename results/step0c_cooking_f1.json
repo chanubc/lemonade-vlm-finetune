@@ -1,0 +1,25 @@
+{
+ "within_cornoil": {
+  "n_fire": 10,
+  "n_normal": 18,
+  "acc": 0.3571,
+  "precision": 0.3571,
+  "recall": 1.0,
+  "f1": 0.5263,
+  "tp": 10,
+  "fn": 0,
+  "fp": 18,
+  "tn": 0
+ },
+ "random_normal_fp_rate": 0.15,
+ "n_random": 40,
+ "hard_normal_fp_rate": 0.44,
+ "n_hard": 25,
+ "smoke_called_fire_rate": 1.0,
+ "n_smoke": 4,
+ "reference_dfire": {
+  "f1": 0.819,
+  "recall": 0.97,
+  "fp_rate": 0.4
+ }
+}
