@@ -73,10 +73,73 @@
     "id": "grease_fire_demo",
     "url": "https://www.youtube.com/watch?v=-dnLGP-xnRo",
     "kind": "ytdlp",
-    "split": "holdout",
+    "split": "train",
     "label_hint": "grease fire demonstration",
     "license": "소방/안전기관 공익 공개영상 - 연구/평가 내부용, 재배포 금지",
-    "note": "Grease Fire Demonstration (131s). 오버레이 없는 실주방 화재.",
+    "note": "Grease Fire Demonstration (131s). 학습용으로 재배정(홀드아웃 미라벨).",
+    "enabled": true
+  },
+  {
+    "id": "train_chip_pan_demo",
+    "url": "https://www.youtube.com/watch?v=TJz109_qgFY",
+    "kind": "ytdlp",
+    "split": "train",
+    "label_hint": "chip pan: normal -> fire",
+    "license": "소방서 공익 공개영상 - 연구 학습용",
+    "note": "Chip Pan Demonstration (53s). 학습용 실 스토브 정상+화재.",
+    "enabled": true
+  },
+  {
+    "id": "train_putout_grease",
+    "url": "https://www.youtube.com/watch?v=CFk4iHOqGHc",
+    "kind": "ytdlp",
+    "split": "train",
+    "label_hint": "grease fire: normal -> fire",
+    "license": "공익 공개영상 - 연구 학습용",
+    "note": "See How to Put Out a Grease Fire (159s). 학습용.",
+    "enabled": true
+  },
+  {
+    "id": "train_flash_in_pan",
+    "url": "https://www.youtube.com/watch?v=LhUdA1gmUYQ",
+    "kind": "ytdlp",
+    "split": "train",
+    "label_hint": "chip pan flash: normal -> fire",
+    "license": "소방서 공익 공개영상 - 연구 학습용",
+    "note": "A flash in the pan (204s). 학습용(fire 프레임만 사용).",
+    "enabled": true
+  },
+  {
+    "id": "train_normal_breakfast",
+    "url": "https://www.youtube.com/watch?v=wdtQQhIMopU",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(계란/베이컨/해시브라운)",
+    "license": "ASMR 조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 학습 데이터(화재 없음). FP 완화용 핵심.",
+    "enabled": true
+  },
+  {
+    "id": "train_normal_eggs",
+    "url": "https://www.youtube.com/watch?v=piLyHNGFJDw",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(계란/지글지글)",
+    "license": "ASMR 조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 학습 데이터(화재 없음).",
+    "enabled": true
+  },
+  {
+    "id": "train_normal_ribeye",
+    "url": "https://www.youtube.com/watch?v=aeM110hLwzU",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(스테이크/밥)",
+    "license": "ASMR 조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 학습 데이터(화재 없음).",
     "enabled": true
   },
   {

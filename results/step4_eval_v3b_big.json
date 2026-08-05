@@ -1,0 +1,17 @@
+{
+ "tag": "finetuned",
+ "adapter": "out/qwen2p5vl-3b-cooking-qlora",
+ "fire_recall": "68/71",
+ "smoke_detected_as_danger": "4/7",
+ "smoke_exact_acc": 0.0,
+ "fp_random": 0.0,
+ "fp_hard": 0.0,
+ "fp_cornoil_rig": 0.4746,
+ "n": {
+  "fire": 71,
+  "smoke": 7,
+  "normal_rig": 59,
+  "normal_rand": 40,
+  "normal_hard": 25
+ }
+}
