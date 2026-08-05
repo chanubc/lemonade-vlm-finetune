@@ -1,105 +1,86 @@
-# LEMONADE VLM Finetune
+# 조리 위험 인식 VLM (PoC)
 
-EPFL-Smart-Kitchen-30 논문([arXiv 2506.01608](https://arxiv.org/abs/2506.01608))의
-**LEMONADE** VQA 벤치마크로 **Qwen2.5-VL-3B** 를 파인튜닝한 프로젝트.
-1인칭 요리 영상에 대한 4지선다 질의응답(Perception/Reasoning)을 학습한다.
+소형 비전-언어 모델(**Qwen2.5-VL-3B**)을 파인튜닝해, 조리 중 장면을
+**정상 / 발연(smoke) / 화재(fire)** 로 인식하고 **헛경보(오탐)를 줄이는** 것이 목표.
+CCTV로 조리기를 감시해 위험 시 로봇 반응(정지/열원차단)을 트리거하는 시스템의 **인식** 부분.
 
-![open-webui 데모: 파인튜닝 모델이 부엌 행동 질문에 정답(D)](docs/assets/demo-openwebui.png)
+> 전체 근거·서술: [docs/HANDOFF.md](docs/HANDOFF.md) · 결과 원본: [results/](results/)
 
-**위 화면이 이 프로젝트가 하는 일입니다** — 파인튜닝한 모델(`lemonade-qwen2.5-vl-3b`)을
-open-webui에 붙여, 요리 영상 프레임을 보고 행동을 맞히게 한 데모.
+## 핵심 결과
+실제 배포에서 흔한 **일상 스토브 조리**의 오탐률을 파인튜닝으로 **8% → 2%** 로 낮춤(화재 재현율 93% 유지).
 
-- **입력(input)**: 한 영상 구간에서 균등 추출한 **프레임 8장** (시간 순서, 왼쪽→오른쪽)
-  (`samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/`)
+![deployment scorecard](docs/assets/cooking_deploy.png)
 
-<p align="left">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_00.jpg" width="92">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_01.jpg" width="92">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_02.jpg" width="92">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_03.jpg" width="92">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_04.jpg" width="92">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_05.jpg" width="92">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_06.jpg" width="92">
-  <img src="samples/frames/YH2003_2023_05_17_09_08_58_51162_51186/frame_07.jpg" width="92">
-</p>
+- 그동안 무섭게 보인 "오탐 52~76%"는 **적대적 홀드아웃 프레임**(발화 직전 팬 + 어두운 실험장치) 탓이었음.
+  범주를 나누니 파인튜닝이 **모든 범주에서 오탐을 낮춤**.
 
-- **질문(prompt)** — 모델에 넣는 실제 텍스트:
+---
 
-```text
-Answer the following multiple-choice question using the given images.
-Question: What action am I doing?
-Choices:
-A. grabbing the green salad
-B. shaking the carrots
-C. holding the radish
-D. closing the bottle          <- 정답
-Respond only with the letter of the correct answer.
-```
-- **정답**: **D** (병뚜껑을 닫는 장면) → 모델이 **D로 정답**. 기본 Qwen2.5-VL은 이런 문제를 자주 틀린다(41% → 71.5%).
+## 실험 여정 (STEP 0 → 5)
 
-> 처음 오셨다면 → **[ONBOARDING.md](ONBOARDING.md)** (처음부터 끝까지 따라 하기)
-
-## 결과 (한눈에)
-test 2,852문제, 학습에 없던 참가자 기준(누수 없음). 찍기 = 25%.
-
-| | before(기본) | **after(파인튜닝)** | Δ |
-|---|---|---|---|
-| **전체** | 41.0% | **71.5%** | **+30.4** |
-| Perception | 40.7% | 67.2% | +26.5 |
-| Reasoning | 41.4% | 76.0% | +34.6 |
-| easy/medium/hard | 46/41/34% | 76/73/64% | +30/+32/+30 |
-
-QLoRA(4비트), 1 epoch, RTX 5070(12GB)에서 ~9시간. 상세: [results/after_comparison.md](results/after_comparison.md)
-공개 어댑터: https://huggingface.co/chanubc/Qwen2.5-VL-3B-LEMONADE-LoRA
-
-## 진행 상황
-- [x] 논문 저장 / QA 표 다운로드 / 참가자 단위 분할 / 학습 포맷 변환
-- [x] 영상 프레임 추출 (필요한 것만 스트리밍)
-- [x] before 기준선 측정 (41.0%, 비전 기여 +12.9%p)
-- [x] QLoRA 파인튜닝 (LLaMA-Factory)
-- [x] after 평가 및 비교 (71.5%)
-- [x] 어댑터 HuggingFace 공개 + open-webui 데모
-
-## 빠른 재현
-```bash
-uv sync && uv sync --group train
-uv run hf auth login
-uv run python scripts/download_qa.py
-uv run python scripts/make_splits.py
-uv run python scripts/convert_to_vqa.py
-uv run python scripts/extract_frames.py --splits train val test
-uv run python scripts/convert_to_vqa.py --require-frames
-uv run llamafactory-cli train configs/qwen2_5vl_lemonade_qlora.yaml
-uv run python scripts/evaluate.py --split test --adapter out/qwen2p5vl-3b-lemonade-qlora --out out/eval_after.json
-uv run python scripts/compare_results.py
-```
-전체 설명은 [ONBOARDING.md](ONBOARDING.md), 학습 상세는 [configs/TRAINING.md](configs/TRAINING.md),
-데모는 [docs/DEMO.md](docs/DEMO.md).
-
-## 바로 테스트 (clone 후)
-전체 데이터(수 GB)는 .gitignore이지만, **데모용 샘플은 git에 포함**돼 있다.
-clone 직후 `samples/` 의 이미지 8장 + 질문으로 open-webui에서 바로 테스트 가능.
-→ [samples/README.md](samples/README.md) (정답 포함 예제 6개), 실행법은 [docs/DEMO.md](docs/DEMO.md)
-가장 인상적인 건 [samples/SHOWCASE.md](samples/SHOWCASE.md) — **기본 모델은 틀리고 파인튜닝 모델은 맞히는 hard 예제**(영어·한국어 프롬프트).
-
-## 폴더 구조
-```
-scripts/   재현 스크립트 (다운로드·분할·변환·프레임추출·평가·비교·서빙·샘플생성)
-configs/   학습 config(QLoRA) + 병합 + TRAINING.md
-samples/   데모용 소량 샘플 (git 포함): frames + 질문·정답
-data/      raw / splits / converted / frames  (대용량 .gitignore)
-results/   before/after 결과 문서
-docs/      DEMO.md (open-webui 데모)
-papers/, out/   논문 PDF·학습 산출물 (.gitignore)
-```
-
-## 데이터 규모 (Perception + Reasoning)
-| split | QA(프레임 확보 후) | 참가자 |
+| STEP | 한 일 | 핵심 결과 |
 |---|---|---|
-| train | 12,858 | 10명 |
-| val | 2,775 | 3명 |
-| test | 2,852 | 3명 |
+| **0** | 기본 VLM 화재 F1 측정 (야외 D-Fire) | F1 0.819, 재현율 0.97 → 단순 화재감지는 약함 |
+| **0-C** | 조리 도메인 재측정 | 정상 오탐 15/44%, 발연 100% 오답 → 진짜 문제는 "오탐 억제 + 단계 인식" |
+| **1** | 위험 홀드아웃 실물화 | D-Fire(야외) 부적합 확인 → NIST FCD 조리유 팬 화재로 v0 구축 |
+| **1b** | 실주방 화재 영상 수집·라벨 | DVIDS(공개도메인)+소방서 실연 → 홀드아웃 fire 10→71 |
+| **2** | 합성 파이프라인 | 실 조리 프레임 위 불꽃/발연 합성 |
+| **2b** | 실데이터 학습셋 | 실 조리화재 영상(정상+화재) 픽셀 휴리스틱 라벨 |
+| **4** | QLoRA 파인튜닝 (v2~v5) | 아래 표 |
+| **5** | 홀드아웃 재정의 → 배포 지표 | 일상 오탐 8→2% (배포 가능 수준) |
 
-## 원칙
-- 파이썬 패키지는 **uv로 전부 관리** (`uv add`/`uv run`/`uv sync`).
-- 데이터 분할은 **참가자 단위**(데이터 누수 방지).
+## 파인튜닝 버전별 — 무엇을 바꿨나
+
+| 버전 | 학습 데이터 | 스토브 정상 오탐* | 판정 |
+|---|---|---|---|
+| base | (프롬프트만) | 76% | 기준 |
+| **v2** | 합성 불꽃(조리배경) 460 | **95%** | 합성이 "조리=위험" 편향 유발 → 악화 |
+| **v3b** | 실 정상 180 + 실 화재 109 | **47.5%** | 실데이터가 처음으로 base 초과 |
+| **v4** | 실 정상 250 + 실 화재 180(+야외 터키) | 62.7% | 화재 과다·야외 → 악화 |
+| **v5** | 실 정상 ~400(12영상) + 실 화재 110 | 52.5%** | 실주방 오탐은 크게↓(dvids 93→59%) |
+| **v6** | v5에서 홀드아웃 3영상 제외 재학습 | 일상 2% | 배포 지표 확보 |
+
+<sub>*STEP2 홀드아웃(59장) 기준. **v6는 재정의 홀드아웃 기준(일상 정상 2%).</sub>
+
+![finetuning journey](docs/assets/cooking_journey.png)
+
+**교훈:** 합성은 해로웠고(가짜 상관 학습), **실 정상 데이터가 오탐을 줄이는 지렛대**. 실 화재를 더 넣는 건 오히려 역효과.
+
+## 배포 스코어카드 (base vs v6, 범주별)
+
+| 범주 | base | v6 |
+|---|---|---|
+| **일상 스토브 정상 (핵심)** | 8% | **2%** |
+| 일상 LEMONADE(오버헤드) | 2% | 0% |
+| 발화 직전(경계, 회색지대) | 83% | 49% |
+| 랩리그(비대표) | 61% | 33% |
+| **fire 재현율** | 71/71 | 66/71 |
+| smoke 재현율 | 7/7 | 4/7 |
+
+**트레이드오프:** 오탐을 줄인 대신 fire 재현율 100%→93%. 안전 시스템에선 미탐이 더 위험하므로 동작점 재조정 필요.
+
+## 방법 (파이프라인)
+```
+영상 검색(yt-dlp) → 프레임 추출(cv2) → 라벨(픽셀 휴리스틱/시간구간) → QLoRA SFT(LLaMA-Factory) → 범주별 배포 평가
+```
+- 영상 단위 train/holdout split로 누수 차단 ([data/holdout_real/sources.json](data/holdout_real/sources.json))
+- 주요 스크립트: `scripts/step0*_*.py`(베이스라인), `collect_incident_frames.py`(수집), `step1b_label_flat.py`·`step2b_build_real_train.py`(라벨·학습셋), `step4_*.py`·`step5_deploy_eval.py`(학습·평가)
+
+## 재현
+```bash
+uv run --group train python scripts/step0c_cooking_baseline.py       # 조리 도메인 베이스라인
+uv run --group train --group collect python scripts/collect_incident_frames.py  # 영상→프레임
+uv run python scripts/step2b_build_real_train.py --cap-normal 400 --cap-fire 110 --smoke 0  # 실데이터 학습셋
+uv run python scripts/step4_make_vqa.py                               # VQA 변환
+uv run llamafactory-cli train configs/qwen2_5vl_cooking_qlora.yaml    # 학습
+uv run --group train python scripts/step5_deploy_eval.py [--adapter out/qwen2p5vl-3b-cooking-qlora]  # 배포 평가
+```
+대용량(영상·프레임·합성·어댑터)은 git 제외, 위 스크립트로 재생성.
+
+## 결론 & 한계
+- **방향은 현실성 있음**: 실 조리 데이터로 일상 오탐을 배포 가능 수준(2%)까지 낮춤.
+- 남은 난제(명확히 좁혀짐): ① fire 재현율 회복(동작점·데이터 비율), ② 발화 직전(경계)을 **조기경보 클래스**로 재설계, ③ 발연(smoke) 실데이터(사용자 촬영).
+
+## 기반: LEMONADE VLM Finetune (이전 단계)
+이 PoC는 [LEMONADE VQA](https://arxiv.org/abs/2506.01608) 파인튜닝 인프라(프레임 추출·uv·LLaMA-Factory)를 재활용한다.
+LEMONADE 조리 프레임은 여기서 "일상 정상" 데이터로도 쓰인다. (원 프로젝트: Qwen2.5-VL-3B, 조리 행동 4지선다 41%→71.5%.)
