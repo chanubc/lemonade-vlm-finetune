@@ -202,5 +202,137 @@
     "license": "소방서 공익 공개영상 - 연구/평가 내부용, 재배포 금지",
     "note": "삭제됨(video not available) — 비활성 유지.",
     "enabled": false
+  },
+  {
+    "id": "tn_OjHj9T4Un6M",
+    "url": "https://www.youtube.com/watch?v=OjHj9T4Un6M",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(스토브 바오 찜/굽기)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_2reC5ZIRedo",
+    "url": "https://www.youtube.com/watch?v=2reC5ZIRedo",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(계란 프라이)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_tbBVeYex0cU",
+    "url": "https://www.youtube.com/watch?v=tbBVeYex0cU",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(양파 요리)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_ntkqujCjF98",
+    "url": "https://www.youtube.com/watch?v=ntkqujCjF98",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(립아이 스테이크)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn__I9LrVhlm78",
+    "url": "https://www.youtube.com/watch?v=-I9LrVhlm78",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(토르티야 굽기)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_d9AD_J9LRQI",
+    "url": "https://www.youtube.com/watch?v=d9AD-J9LRQI",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(중식 웍 조리)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_u9nry4Psey4",
+    "url": "https://www.youtube.com/watch?v=u9nry4Psey4",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(웍 볶음밥)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_Tqx5W9li6WQ",
+    "url": "https://www.youtube.com/watch?v=Tqx5W9li6WQ",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(햄버거 스토브)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_8uyytKlpUnE",
+    "url": "https://www.youtube.com/watch?v=8uyytKlpUnE",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(스테이크 굽기)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_ojB943cSzGA",
+    "url": "https://www.youtube.com/watch?v=ojB943cSzGA",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(간·양파 조리)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_nmAa1suJ5OY",
+    "url": "https://www.youtube.com/watch?v=nmAa1suJ5OY",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(버거 스토브)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
+  },
+  {
+    "id": "tn_P6W8kwmwcno",
+    "url": "https://www.youtube.com/watch?v=P6W8kwmwcno",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(기초 조리 과정)",
+    "license": "조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 대량수집.",
+    "enabled": true
   }
 ]
