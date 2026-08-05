@@ -60,33 +60,53 @@
     "enabled": false
   },
   {
-    "id": "worthing_chip_pan_demo",
-    "url": "https://www.youtube.com/watch?v=KTrth1ywHM4",
+    "id": "dvids_grease_fire",
+    "url": "https://www.dvidshub.net/video/815687/fire-prevention-week-grease-fires-kitchen",
     "kind": "ytdlp",
     "split": "holdout",
-    "label_hint": "normal -> water-into-oil -> flare-up",
-    "license": "소방서 공익 공개영상 - 연구/평가 내부용만, 재배포 금지",
-    "note": "Worthing Fire Station chip pan 실연. 전이 시점 라벨에 좋음.",
-    "enabled": false
+    "label_hint": "kitchen grease fire (normal -> flare-up)",
+    "license": "US government (DVIDS, 미 군 공보) - public domain",
+    "note": "주방 기름화재 실연. 공개도메인, 오버레이 없음.",
+    "enabled": true
+  },
+  {
+    "id": "grease_fire_demo",
+    "url": "https://www.youtube.com/watch?v=-dnLGP-xnRo",
+    "kind": "ytdlp",
+    "split": "holdout",
+    "label_hint": "grease fire demonstration",
+    "license": "소방/안전기관 공익 공개영상 - 연구/평가 내부용, 재배포 금지",
+    "note": "Grease Fire Demonstration (131s). 오버레이 없는 실주방 화재.",
+    "enabled": true
+  },
+  {
+    "id": "chip_pan_facts",
+    "url": "https://www.youtube.com/watch?v=dPr-tOZHmOA",
+    "kind": "ytdlp",
+    "split": "holdout",
+    "label_hint": "chip pan fire (normal -> water-into-oil -> flare-up)",
+    "license": "소방서 공익 공개영상 - 연구/평가 내부용, 재배포 금지",
+    "note": "Chip Pan Fires - The Facts (197s). 정상->발화 전이 포함.",
+    "enabled": true
   },
   {
     "id": "northants_chip_pan_guidance",
     "url": "https://www.youtube.com/watch?v=KO2HTtn6CvY",
     "kind": "ytdlp",
     "split": "holdout",
-    "label_hint": "normal -> flare-up",
-    "license": "소방서 공익 공개영상 - 연구/평가 내부용만, 재배포 금지",
-    "note": "Northamptonshire Fire chip pan 실연 + 안내.",
-    "enabled": false
+    "label_hint": "chip pan flare-up",
+    "license": "소방서 공익 공개영상 - 연구/평가 내부용, 재배포 금지",
+    "note": "Northamptonshire Fire chip pan 실연 (34s).",
+    "enabled": true
   },
   {
-    "id": "grease_fire_demo",
-    "url": "https://www.youtube.com/watch?v=-dnLGP-xnRo",
+    "id": "worthing_chip_pan_demo",
+    "url": "https://www.youtube.com/watch?v=KTrth1ywHM4",
     "kind": "ytdlp",
-    "split": "train",
-    "label_hint": "fire",
-    "license": "출처 확인 후 사용 - 내부용",
-    "note": "grease fire 실연. split=train 예시(홀드아웃과 겹치지 않게 영상 단위 분리).",
+    "split": "holdout",
+    "label_hint": "normal -> water-into-oil -> flare-up",
+    "license": "소방서 공익 공개영상 - 연구/평가 내부용, 재배포 금지",
+    "note": "삭제됨(video not available) — 비활성 유지.",
     "enabled": false
   }
 ]

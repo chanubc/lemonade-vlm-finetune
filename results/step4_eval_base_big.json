@@ -1,0 +1,17 @@
+{
+ "tag": "base",
+ "adapter": null,
+ "fire_recall": "71/71",
+ "smoke_detected_as_danger": "7/7",
+ "smoke_exact_acc": 0.4286,
+ "fp_random": 0.025,
+ "fp_hard": 0.0,
+ "fp_cornoil_rig": 0.7627,
+ "n": {
+  "fire": 71,
+  "smoke": 7,
+  "normal_rig": 59,
+  "normal_rand": 40,
+  "normal_hard": 25
+ }
+}
