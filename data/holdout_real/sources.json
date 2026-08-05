@@ -143,6 +143,37 @@
     "enabled": true
   },
   {
+    "id": "train_normal_veg",
+    "url": "https://www.youtube.com/watch?v=YstHxYtYXRc",
+    "kind": "ytdlp",
+    "split": "train",
+    "force_label": "normal",
+    "label_hint": "정상 조리(채소 볶음)",
+    "license": "ASMR 조리영상 - 연구 학습용",
+    "note": "실 스토브 정상 학습 데이터(화재 없음). 주방 다양성.",
+    "enabled": true
+  },
+  {
+    "id": "train_fire_pan",
+    "url": "https://www.youtube.com/watch?v=ESBR8KLPe_0",
+    "kind": "ytdlp",
+    "split": "train",
+    "label_hint": "stovetop pan fire",
+    "license": "공익 공개영상 - 연구 학습용",
+    "note": "What To Do If Your Cooking Pan Is On Fire (48s). 실 스토브 팬화재.",
+    "enabled": true
+  },
+  {
+    "id": "train_fire_turkey",
+    "url": "https://www.youtube.com/watch?v=j0bvTBhOOz8",
+    "kind": "ytdlp",
+    "split": "train",
+    "label_hint": "turkey fryer oil fire",
+    "license": "공익 공개영상 - 연구 학습용",
+    "note": "터키프라이어 기름 화재(166s). 야외 도메인 → 오탐 악화 확인되어 비활성.",
+    "enabled": false
+  },
+  {
     "id": "chip_pan_facts",
     "url": "https://www.youtube.com/watch?v=dPr-tOZHmOA",
     "kind": "ytdlp",
